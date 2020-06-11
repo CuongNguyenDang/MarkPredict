@@ -1,5 +1,4 @@
-in Terminal:
---    python runserver.py
+in Terminal:	python runserver.py
 
 
 *****************************************************************************************
