@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <center><h1>Dự đoán điểm thi THPT và ngành-trường đại học</h1></center>
+    <p class="lead">Nhập điểm tổng kết vào các ô bên dưới rồi nhấn nút "Go".</p>
+    <center>
+        <form action="/get-text" method="POST">
+            
+            <table border="1" class="dataframe">
+                <thead>
+                  <tr style="text-align: right;">
+                    <th></th>
+                    <th>Toán</th>
+                    <th>Ngữ văn</th>
+                    <th>Vật lí</th>
+                    <th>Hóa học</th>
+                    <th>Sinh học</th>
+                    <th>Lịch sử</th>
+                    <th>Địa lý</th>
+                    <th>GDCD</th>
+                    <th>Ngoại ngữ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Điểm tổng kết</td>
+                    <td><input name = 'toan' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{toan}} style='width:4em' /></td>
+                    <td><input name = 'van' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{van}} style='width:4em' /></td>
+                    <td><input name = 'li' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{li}} style='width:4em' /></td>
+                    <td><input name = 'hoa' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{hoa}} style='width:4em' /></td>
+                    <td><input name = 'sinh' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{sinh}} style='width:5em' /></td>
+                    <td><input name = 'su' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{su}} style='width:4em' /></td>
+                    <td><input name = 'dia' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{dia}} style='width:4em' /></td>
+                    <td><input name = 'gdcd' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{gdcd}} style='width:4em' /></td>
+                    <td><input name = 'anh' type="number" size="10" max = 10 min = 0 step = 0.01 class="wide-font" value={{anh}} style='width:6em' /></td>
+                  </tr>
+                    {% block result %}{% endblock %}
+                </tbody>
+            </table>
+            <p></p>
+            <input type="submit" value="Go">
+        </center>
+        <p></p>
+        <left>{% block uni %}{% endblock %}</left>
+        <p></p>
+        </form>
+        
+    </center>    
+</div>
+
+
+<!--<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Flask gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>The Python Package Index is a repository of software for the Python programming language.</p>
+        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Microsoft Azure</h2>
+        <p>You can easily publish to Microsoft Azure using Python Tools for Visual Studio. Find out how you can host your application using a free trial today.</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+    </div>
+</div>-->
+
+{% endblock %}
